@@ -2,11 +2,8 @@
 
 namespace App\Domains\User\Models;
 
-<<<<<<< HEAD
 use App\Domains\Event\Model\Event;
 use Database\Factories\UserFactory;
-=======
->>>>>>> 0e4811deb497ae1bcde168ded676a9e4b465aa63
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -49,7 +46,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'is_admin' => 'boolean',
     ];
-<<<<<<< HEAD
 
     public static function newFactory(): UserFactory
     {
@@ -69,6 +65,4 @@ class User extends Authenticatable
                 'assigned_by',
             ]);
     }
-=======
->>>>>>> 0e4811deb497ae1bcde168ded676a9e4b465aa63
 }
