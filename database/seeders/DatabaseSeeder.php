@@ -2,11 +2,14 @@
 
 namespace Database\Seeders;
 
+<<<<<<< HEAD
 use App\Domains\Event\Enums\Status;
 use App\Domains\Event\Model\Event;
 use App\Domains\User\Models\User;
 use App\Domains\UserEvent\Enums\ParticipationStatus;
 use Database\Factories\EventFactory;
+=======
+>>>>>>> 0e4811deb497ae1bcde168ded676a9e4b465aa63
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
