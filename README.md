@@ -115,5 +115,5 @@ Note: *Back end and front end both should be in the same domain but the port add
 - Admin can assign or remove a user from an event.
 
 ## Database Schema
-![DB Schema](https://user-images.githubusercontent.com/47297673/173230505-f43e03cf-2370-44a9-a094-7fbe7d6a493b.png "DB Schema")
+![DB Schema](https://user-images.githubusercontent.com/47297673/173300456-32951856-73d5-45d5-abc6-5fe6f01fb630.png "DB Schema")
 

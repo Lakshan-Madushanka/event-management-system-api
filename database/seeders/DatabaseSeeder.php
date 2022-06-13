@@ -2,7 +2,11 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Domains\Event\Enums\Status;
+use App\Domains\Event\Model\Event;
+use App\Domains\User\Models\User;
+use App\Domains\UserEvent\Enums\ParticipationStatus;
+use Database\Factories\EventFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,11 +18,32 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\Status::factory(10)->create();
+        $this->call(UserSeeder::class);
+        $this->call(EventSeeder::class);
+        $this->assignEventsToUsers();
+    }
 
-        // \App\Models\Status::factory()->create([
-        //     'name' => 'Test Status',
-        //     'email' => 'test@example.com',
-        // ]);
+    public function assignEventsToUsers()
+    {
+        Event::query()
+            ->limit(50)
+            ->get()
+            ->each(function (Event $event) {
+                $userIds = User::query()
+                    ->inRandomOrder()
+                    ->limit(rand(5, 25))
+                    ->pluck('id')
+                    ->all();
+
+                $participationStatus = array_rand(ParticipationStatus::cases());
+                $isParticipated = $event->status === Status::HELD->value
+                    ? array_rand([true, false]) : false;
+
+                $event->users()->attach($userIds, [
+                    'participation_status' => $participationStatus,
+                    'assigned_by' => EventFactory::getRandomAdminUserId(),
+                    'is_participated' => $isParticipated,
+                ]);
+            });
     }
 }

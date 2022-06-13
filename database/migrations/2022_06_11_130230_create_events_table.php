@@ -25,7 +25,7 @@ return new class () extends Migration {
             $table->dateTime('end_time')->index();
             $table->unsignedTinyInteger('status')->default(Status::UPCOMING->value)->index();
             $table->boolean('is_private');
-            $table->string('time_zone', 25);
+            $table->string('time_zone', 100);
             $table->string('description', 1000)->nullable();
             $table->unsignedTinyInteger('created_by');
             $table->unsignedTinyInteger('event_in_charge')->nullable();

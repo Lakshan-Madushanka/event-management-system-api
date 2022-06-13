@@ -2,11 +2,14 @@
 
 namespace Database\Seeders;
 
+use App\Domains\Event\Model\Event;
+use App\Domains\Event\Services\EventService;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class EventSeeder extends Seeder
 {
+    use WithoutModelEvents;
     /**
      * Run the database seeds.
      *
@@ -14,6 +17,12 @@ class EventSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Event::factory()
+            ->count(150)
+            ->create()
+            ->each(function (Event $event) {
+                $event->code = 'Event_#'.$event->id;
+                $event->save();
+            });
     }
 }
