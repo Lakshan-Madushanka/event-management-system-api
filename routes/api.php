@@ -1,6 +1,6 @@
 <?php
 
-use App\Domains\Calender\Controllers\CalenderController;
+use App\Domains\Calender\Controllers\CalendarController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 //calender
-Route::prefix('calender/')->name('calender.')->group(function () {
-    Route::get('holidays', [CalenderController::class, 'retrieveRegionHolidays'])
+Route::prefix('calendar/')->name('calendar.')->group(function () {
+    Route::get('holidays', [CalendarController::class, 'retrieveRegionHolidays'])
     ->name('retrieveRegionHolidays');
 });

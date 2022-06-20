@@ -2,16 +2,16 @@
 
 namespace App\Domains\Calender\Controllers;
 
-use App\ExternalServices\ApiServices\Contracts\CalenderService;
+use App\ExternalServices\ApiServices\Contracts\CalendarService;
 use App\Http\Controllers\Controller;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 
-class CalenderController extends Controller
+class CalendarController extends Controller
 {
     use ApiResponser;
 
-    public function retrieveRegionHolidays(CalenderService $calenderService, Request $request)
+    public function retrieveRegionHolidays(CalendarService $calenderService, Request $request)
     {
         $data = $calenderService->getHolidays($request->query());
 

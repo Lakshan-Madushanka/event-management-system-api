@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\ExternalServices\ApiServices\CalenderService\GoogleCalenderService;
-use App\ExternalServices\ApiServices\Contracts\CalenderService;
+use App\ExternalServices\ApiServices\CalendarService\GoogleCalendarService;
+use App\ExternalServices\ApiServices\Contracts\CalendarService;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
 
@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
             $this->app->register(TelescopeServiceProvider::class);
         }
 
-        $this->app->bind(CalenderService::class, GoogleCalenderService::class);
+        $this->app->bind(CalendarService::class, GoogleCalendarService::class);
     }
 
     /**

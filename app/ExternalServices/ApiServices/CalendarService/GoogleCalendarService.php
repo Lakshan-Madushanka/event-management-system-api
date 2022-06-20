@@ -1,14 +1,14 @@
 <?php
 
-namespace App\ExternalServices\ApiServices\CalenderService;
+namespace App\ExternalServices\ApiServices\CalendarService;
 
-use App\ExternalServices\ApiServices\Contracts\CalenderService;
+use App\ExternalServices\ApiServices\Contracts\CalendarService;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use stdClass;
 
-class GoogleCalenderService implements CalenderService
+class GoogleCalendarService implements CalendarService
 {
     private string $holidaysUrl = 'https://www.googleapis.com/calendar/v3/calendars/{REGION}%23holiday%40group.v.calendar.google.com/events?key={APIKEY}';
 

@@ -5,7 +5,7 @@ namespace App\ExternalServices\ApiServices\Contracts;
 use Illuminate\Support\Collection;
 use stdClass;
 
-interface CalenderService
+interface CalendarService
 {
     public function getHolidays(array $filters): Collection;
 
