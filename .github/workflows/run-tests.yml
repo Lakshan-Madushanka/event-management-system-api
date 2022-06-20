@@ -32,7 +32,7 @@ jobs:
       - name: Setup project for testing
         run: |
           cp .env.testing.docker .env.testing
-          echo GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }} >> .env
+          echo GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }} >> .env.testing
 
       - name: Run tests
         run: docker exec -t laravel-php php artisan test

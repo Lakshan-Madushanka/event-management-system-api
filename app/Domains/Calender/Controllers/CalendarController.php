@@ -11,7 +11,7 @@ class CalendarController extends Controller
 {
     use ApiResponser;
 
-    public function retrieveRegionHolidays(CalendarService $calenderService, Request $request)
+    public function retrieveRegionHolidays(CalendarService $calenderService, Request $request): \Illuminate\Http\JsonResponse
     {
         $data = $calenderService->getHolidays($request->query());
 
